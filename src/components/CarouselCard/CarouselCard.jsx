@@ -18,8 +18,15 @@ const StyledContainer = styled(Container)({
     },
 
 })
+const StyledLink = styled(Link)({
+    textDecoration:'none',
+    "&:hover": {
+        color: "#000000",
+        textDecoration: "underline #000000"
+    }
+})
 const breakPoints = [
-    { width: 1, itemsToShow: 4, itemsToScroll: 4 ,outerSpacing:70 ,},
+    { width: 1, itemsToShow: 4, itemsToScroll: 4, outerSpacing: 70, },
     { width: 1200, itemsToShow: 4 }
 ];
 const items = [
@@ -38,29 +45,29 @@ const CarouselCard = () => {
             <StyledContainer>
                 <Carousel breakPoints={breakPoints} pagination={false}  >
                     {items.map((item) => (
-                         <Link to="/productinfo" style={{textDecoration:"none"}}>
-                        <Box sx={{
-                            border: '0.5px solid #d6d6d6',
-                            borderRadius: '0.5rem', padding: '20px', margin: '5px'
-                        }} key={item.id}>
-                            <Box>
-                                <img src={Image} alt="abc" width="173px" height="173px" />
+                        <StyledLink to="/productinfo" >
+                            <Box sx={{
+                                border: '0.5px solid #d6d6d6',
+                                borderRadius: '0.5rem', padding: '20px', margin: '5px'
+                            }} key={item.id}>
+                                <Box>
+                                    <img src={Image} alt="abc" width="173px" height="173px" />
+                                </Box>
+                                <Box component="span" >
+                                    <Typography variant='h6'>{item.title}</Typography>
+                                </Box>
+                                <Box>
+                                    <Typography variant='caption'> {item.text1} </Typography>
+                                </Box>
+                                <Box>
+                                    <Typography variant='caption'>{item.text2}</Typography>
+                                </Box>
+                                <Box >
+                                    <Star />
+                                    <Typography component="body1" variant='caption'>{item.rating}</Typography>
+                                </Box>
                             </Box>
-                            <Box component="span" >
-                                <Typography variant='h6'>{item.title}</Typography>
-                            </Box>
-                            <Box>
-                                <Typography variant='caption'> {item.text1} </Typography>
-                            </Box>
-                            <Box>
-                                <Typography variant='caption'>{item.text2}</Typography>
-                            </Box>
-                            <Box >
-                                <Star />
-                                <Typography component="body1" variant='caption'>{item.rating}</Typography>
-                            </Box>
-                        </Box>
-                        </Link>
+                        </StyledLink>
                     ))}
                 </Carousel>
             </StyledContainer>

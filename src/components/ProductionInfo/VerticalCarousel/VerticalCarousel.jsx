@@ -33,45 +33,49 @@ const StyledButton = styled(Button)({
     width: '280.88px',
     height: '50px'
 })
+const breakPoints = [
+    { width: 1, itemsToShow: 4, itemsToScroll: 4 },
+    // { width: 1200, itemsToShow: 4 }
+];
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 const VerticalCarousel = () => {
     return (
         <Box>
             <StyledContainer>
                 <Grid container spacing={2} >
-
-                    {/* <Carousel
-                        itemsToShow={1}
+{/* 
+                    <Carousel
                         pagination={false}
                         showArrows={false}
+                        breakPoints={breakPoints}
                         verticalMode
                         itemPosition={consts.START} > */}
-                    <Grid item xs={6}>
-                        <Box sx={{ display: "flex" }}>
-                            <Box sx={{ marginTop: '5px' }}>
-                                <Box>
-                                    <img src={Image} alt="abc" width="88.83px" height="92px" />
+                        <Grid item xs={6}>
+                            <Box sx={{ display: "flex" }}>
+                                <Box sx={{ marginTop: '5px' }}>
+                                    <Box>
+                                        <img src={Image} alt="abc" width="88.83px" height="92px" />
+                                    </Box>
+                                    <Box>
+                                        <img src={Image} alt="abc" width="88.83px" height="92px" />
+                                    </Box>
+                                    <Box>
+                                        <img src={Image} alt="abc" width="88.83px" height="92px" />
+                                    </Box>
+                                    <Box>
+                                        <img src={Image} alt="abc" width="88.83px" height="92px" />
+                                    </Box>
+                                    <Box>
+                                        <img src={Image} alt="abc" width="88.83px" height="92px" />
+                                    </Box>
                                 </Box>
                                 <Box>
-                                    <img src={Image} alt="abc" width="88.83px" height="92px" />
-                                </Box>
-                                <Box>
-                                    <img src={Image} alt="abc" width="88.83px" height="92px" />
-                                </Box>
-                                <Box>
-                                    <img src={Image} alt="abc" width="88.83px" height="92px" />
-                                </Box>
-                                <Box>
-                                    <img src={Image} alt="abc" width="88.83px" height="92px" />
+                                    <Box>
+                                        <img src={Image} alt="abc" width="524.19px" height="524.19px" />
+                                    </Box>
                                 </Box>
                             </Box>
-                            <Box>
-                                <Box>
-                                    <img src={Image} alt="abc" width="524.19px" height="524.19px" />
-                                </Box>
-                            </Box>
-                        </Box>
-                    </Grid>
+                        </Grid>
                     {/* </Carousel> */}
 
                     <Grid item xs={6}>
@@ -202,15 +206,15 @@ const VerticalCarousel = () => {
                                     <StyledButton variant="contained">Contained</StyledButton>
                                 </Box>
                             </StyledBoxThree>
-                            <Divider sx={{marginTop:'15px'}}/>
-                            <Box sx={{display:"flex", justifyContent:"space-between", marginTop:'15px'}}>
-                                <Box sx={{display:"flex"}}>
+                            <Divider sx={{ marginTop: '15px' }} />
+                            <Box sx={{ display: "flex", justifyContent: "space-between", marginTop: '15px' }}>
+                                <Box sx={{ display: "flex" }}>
                                     <CardGiftcard />
                                     <Typography>
                                         Add to Registry
                                     </Typography>
                                 </Box>
-                                <Box sx={{display:"flex"}}>
+                                <Box sx={{ display: "flex" }}>
                                     <AddShoppingCart />
                                     <Typography>
                                         Add to Shopping List
@@ -219,7 +223,6 @@ const VerticalCarousel = () => {
                             </Box>
                         </Box>
                     </Grid>
-
                 </Grid>
             </StyledContainer>
         </Box>
