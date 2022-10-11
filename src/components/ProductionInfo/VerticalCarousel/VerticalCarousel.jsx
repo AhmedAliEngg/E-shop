@@ -1,10 +1,20 @@
 import { AddShoppingCart, CardGiftcard, KeyboardArrowDown } from '@mui/icons-material';
 import { Box, Container, styled, Grid, Typography, Divider, Checkbox, Radio, InputBase, Button } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import Carousel, { consts } from 'react-elastic-carousel';
 import Image from '../../../assets/CarouselImage.webp'
 import { ReactComponent as Star } from '../../../assets/star.svg'
 import { ReactComponent as Disabled } from '../../../assets/disable.svg'
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/zoom";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+// import './styles.css'
+// import required modules
+import { FreeMode, Navigation, Thumbs, Zoom, Pagination } from "swiper";
 const StyledContainer = styled(Container)({
     display: " flex",
     justifyContent: 'center',
@@ -34,25 +44,26 @@ const StyledButton = styled(Button)({
     height: '50px'
 })
 const breakPoints = [
-    { width: 1, itemsToShow: 4, itemsToScroll: 4 },
+    { width: 1, itemsToShow: 1, itemsToScroll: 1 },
     // { width: 1200, itemsToShow: 4 }
 ];
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 const VerticalCarousel = () => {
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
     return (
         <Box>
             <StyledContainer>
                 <Grid container spacing={2} >
-{/* 
+                    {/* 
                     <Carousel
                         pagination={false}
                         showArrows={false}
                         breakPoints={breakPoints}
                         verticalMode
                         itemPosition={consts.START} > */}
-                        <Grid item xs={6}>
-                            <Box sx={{ display: "flex" }}>
-                                <Box sx={{ marginTop: '5px' }}>
+                    <Grid item xs={6}>
+                        {/* <Box sx={{ display: "flex" }}> */}
+                        {/* <Box sx={{ marginTop: '5px' }}>
                                     <Box>
                                         <img src={Image} alt="abc" width="88.83px" height="92px" />
                                     </Box>
@@ -73,9 +84,68 @@ const VerticalCarousel = () => {
                                     <Box>
                                         <img src={Image} alt="abc" width="524.19px" height="524.19px" />
                                     </Box>
+                                </Box> */}
+                        <Swiper
+                            loop={true}
+                            spaceBetween={1}
+                            navigation={true}
+                            zoom={true}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            thumbs={{ swiper: thumbsSwiper }}
+                            modules={[Zoom, FreeMode, Navigation, Thumbs, Pagination]}
+                        >
+                            <SwiperSlide>
+                                <Box className="swiper-zoom-container">
+                                    <img src={Image} alt="abc" width="524.19px" height="524.19px" />
                                 </Box>
-                            </Box>
-                        </Grid>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <Box className="swiper-zoom-container">
+                                    <img src={Image} alt="abc" width="524.19px" height="524.19px" />
+                                </Box>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <Box className="swiper-zoom-container">
+                                    <img src={Image} alt="abc" width="524.19px" height="524.19px" />
+                                </Box>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <Box className="swiper-zoom-container">
+                                    <img src={Image} alt="abc" width="524.19px" height="524.19px" />
+                                </Box>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <Box className="swiper-zoom-container">
+                                    <img src={Image} alt="abc" width="524.19px" height="524.19px" />
+                                </Box>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <Box className="swiper-zoom-container">
+                                    <img src={Image} alt="abc" width="524.19px" height="524.19px" />
+                                </Box>
+                            </SwiperSlide>
+                        </Swiper>
+
+                        {/* </Box> */}
+                        <Swiper
+                            onSwiper={setThumbsSwiper}
+                            loop={true}
+                            spaceBetween={10}
+                            slidesPerView={4}
+                            freeMode={true}
+                            watchSlidesProgress={true}
+                            modules={[FreeMode, Navigation, Thumbs]}
+                        >
+                            <SwiperSlide>
+                                <img src={Image} alt="abc" width="88.83px" height="92px" />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img src={Image} alt="abc" width="88.83px" height="92px" />
+                            </SwiperSlide>
+                        </Swiper>
+                    </Grid>
                     {/* </Carousel> */}
 
                     <Grid item xs={6}>
