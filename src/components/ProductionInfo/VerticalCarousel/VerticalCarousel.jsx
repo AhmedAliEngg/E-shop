@@ -1,19 +1,14 @@
 import { AddShoppingCart, CardGiftcard, KeyboardArrowDown } from '@mui/icons-material';
 import { Box, Container, styled, Grid, Typography, Divider, Checkbox, Radio, InputBase, Button } from '@mui/material'
 import React, { useState } from 'react'
-import Carousel, { consts } from 'react-elastic-carousel';
 import Image from '../../../assets/CarouselImage.webp'
 import { ReactComponent as Star } from '../../../assets/star.svg'
-import { ReactComponent as Disabled } from '../../../assets/disable.svg'
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/zoom";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-// import './styles.css'
-// import required modules
 import { FreeMode, Navigation, Thumbs, Zoom, Pagination } from "swiper";
 const StyledContainer = styled(Container)({
     display: " flex",
@@ -24,67 +19,166 @@ const StyledContainer = styled(Container)({
         paddingLeft: 0,
         paddingRight: 0,
     },
+})
+const StyledContainerOne = styled(Container)({
+    display: " flex",
+    // justifyContent: 'center',
+    // alignItems: "center",
+    marginTop: "20px",
+    padding: "1px 0",
+    '&.MuiContainer-root': {
+        paddingLeft: 0,
+        paddingRight: 0,
+    },
+})
+const StyledContainerTwo = styled(Container)({
+    display: " flex",
+    // justifyContent: 'center',
+    // alignItems: "center",
+    marginTop: "20px",
+    //padding: "1px 0",
+    textTransform: "uppercase",
+    '&.MuiContainer-root': {
+        paddingLeft: "8px",
+        paddingRight: 0,
 
+    },
+})
+const StyledContainerThree = styled(Container)({
+    display: " flex",
+    // justifyContent: 'center',
+    // alignItems: "center",
+    //marginTop: "20px",
+    //padding: "1px 0",
+    textTransform: "uppercase",
+    '&.MuiContainer-root': {
+        paddingLeft: "7px",
+        paddingRight: 0,
+
+    },
+})
+const StyledContainerFour = styled(Container)({
+    display: " flex",
+    // justifyContent: 'center',
+    // alignItems: "center",
+    //marginTop: "20px",
+    //padding: "1px 0",
+    textTransform: "uppercase",
+    '&.MuiContainer-root': {
+        paddingLeft: "6px",
+        paddingRight: 0,
+
+    },
+})
+const StyledTypographyTwo = styled(Typography)({
+    fontSize: ".65rem",
+    fontFamily: "Termina Headline,Verdana,Geneva,sans-serif",
+    fontWeight: 600,
+    textDecoration: "underline",
+    color: "#1377C9",
+})
+const StyledTypographyThree = styled(Typography)({
+    fontWeight: 300,
+    fontSize: "1.2rem",
+    textTransform: "none",
+    letterSpacing: "0.0005em"
+})
+const StyledTypographyFour = styled (Typography)({
+    margin: "10px",
+    textDecoration: "underline",
 })
 const Search = styled(Box)(({ theme }) => ({
     backgroundColor: 'white',
     padding: '5px 10px',
     display: 'flex',
     width: '30%',
-
-
 }))
 const StyledBoxThree = styled(Box)({
     display: "flex",
     justifyContent: "space-around",
-    // width: '50%'
 })
 const StyledButton = styled(Button)({
     width: '280.88px',
     height: '50px'
 })
-const breakPoints = [
-    { width: 1, itemsToShow: 1, itemsToScroll: 1 },
-    // { width: 1200, itemsToShow: 4 }
-];
+const StyledTypography = styled(Typography)({
+    margin: "10px"
+})
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 const VerticalCarousel = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     return (
         <Box>
+            <StyledContainerOne>
+                <Box sx={{ display: 'flex', alignItems: 'baseline' }}>
+                    <Box component="span">
+                        <StyledTypography variant='caption'>
+                            Home
+                        </StyledTypography>
+                    </Box>
+                    <Divider orientation="vertical" flexItem sx={{ borderColor: "rgba(0, 0, 0, 0.30)" }} />
+                    <Box component="span">
+                        <StyledTypography variant='caption'>
+                            Shops
+                        </StyledTypography>
+                    </Box>
+                    <Divider orientation="vertical" flexItem sx={{ borderColor: "rgba(0, 0, 0, 0.30)" }} />
+                    <Box component="span">
+                        <StyledTypography variant='caption'>
+                            Fall Shop
+                        </StyledTypography>
+                    </Box>
+                    <Divider orientation="vertical" flexItem sx={{ borderColor: "rgba(0, 0, 0, 0.30)" }} />
+                    <Box component="span">
+                        <StyledTypography variant='caption'>
+                            Fall Decor
+                        </StyledTypography>
+                    </Box>
+                </Box>
+            </StyledContainerOne>
+
+            <StyledContainerTwo>
+                <Box component="span">
+                    <StyledTypographyTwo variant='caption'> shop Bee & Willow Home </StyledTypographyTwo>
+                </Box>
+            </StyledContainerTwo>
+
+            <StyledContainerThree>
+                <Box>
+                    <StyledTypographyThree variant='h6' >
+                        Dunkin' Donuts® Original Blend Coffee Keurig® K-Cup® Pods 22-Count
+                    </StyledTypographyThree>
+                </Box>
+            </StyledContainerThree>
+
+            <StyledContainerFour>
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box component="span">
+                    <Star width="90" height="20"/>
+                    </Box>
+                    <Box component="span">
+                    <StyledTypographyFour variant='caption' sx={{textTransform:"none"}}>
+                        1036 Reviews
+                    </StyledTypographyFour>
+                    </Box>
+                    <Divider orientation="vertical" flexItem  sx={{ borderColor: "rgba(0, 0, 0, 0.30)" }}/>
+                    <Box component="span">
+                    <StyledTypographyFour  variant='caption' sx={{textTransform:"none"}}>
+                        Write Review
+                    </StyledTypographyFour>
+                    </Box>
+                    <Divider orientation="vertical" flexItem  sx={{ borderColor: "rgba(0, 0, 0, 0.30)" }}/>
+                    <Box component="span">
+                    <StyledTypographyFour  variant='caption' sx={{textTransform:"none"}}>
+                        Q&A
+                    </StyledTypographyFour>
+                    </Box>
+                </Box>
+            </StyledContainerFour>
+
             <StyledContainer>
                 <Grid container spacing={2} >
-                    {/* 
-                    <Carousel
-                        pagination={false}
-                        showArrows={false}
-                        breakPoints={breakPoints}
-                        verticalMode
-                        itemPosition={consts.START} > */}
                     <Grid item xs={6}>
-                        {/* <Box sx={{ display: "flex" }}> */}
-                        {/* <Box sx={{ marginTop: '5px' }}>
-                                    <Box>
-                                        <img src={Image} alt="abc" width="88.83px" height="92px" />
-                                    </Box>
-                                    <Box>
-                                        <img src={Image} alt="abc" width="88.83px" height="92px" />
-                                    </Box>
-                                    <Box>
-                                        <img src={Image} alt="abc" width="88.83px" height="92px" />
-                                    </Box>
-                                    <Box>
-                                        <img src={Image} alt="abc" width="88.83px" height="92px" />
-                                    </Box>
-                                    <Box>
-                                        <img src={Image} alt="abc" width="88.83px" height="92px" />
-                                    </Box>
-                                </Box>
-                                <Box>
-                                    <Box>
-                                        <img src={Image} alt="abc" width="524.19px" height="524.19px" />
-                                    </Box>
-                                </Box> */}
                         <Swiper
                             loop={true}
                             spaceBetween={1}
@@ -127,8 +221,6 @@ const VerticalCarousel = () => {
                                 </Box>
                             </SwiperSlide>
                         </Swiper>
-
-                        {/* </Box> */}
                         <Swiper
                             onSwiper={setThumbsSwiper}
                             loop={true}
@@ -146,7 +238,6 @@ const VerticalCarousel = () => {
                             </SwiperSlide>
                         </Swiper>
                     </Grid>
-                    {/* </Carousel> */}
 
                     <Grid item xs={6}>
                         <Box>
@@ -154,25 +245,7 @@ const VerticalCarousel = () => {
                                 Dunkin' Donuts
                             </Typography>
                         </Box>
-                        <Box>
-                            <Typography variant='body1' gutterBottom>
-                                Dunkin' Donuts® Original Blend Coffee Keurig® K-Cup® Pods 22-Count
-                            </Typography>
-                        </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'baseline' }}>
-                            <Star />
-                            <Typography>
-                                1036 Reviews
-                            </Typography>
-                            <Divider orientation="vertical" flexItem />
-                            <Typography>
-                                Write Review
-                            </Typography>
-                            <Divider orientation="vertical" flexItem />
-                            <Typography>
-                                Q&A
-                            </Typography>
-                        </Box>
+
                         <Box>
                             <Typography variant='subtitle1' gutterBottom>
                                 $19.99
