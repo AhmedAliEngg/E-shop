@@ -1,5 +1,5 @@
 import { AddShoppingCart } from '@mui/icons-material'
-import { Box, Button, Checkbox, Container, Divider, Grid, styled, Typography } from '@mui/material'
+import { Box, Button, Checkbox, Container, Divider, Grid, Rating, styled, Typography } from '@mui/material'
 import React from 'react'
 import Image from '../../../assets/CarouselImage.webp'
 import { ReactComponent as Plus } from "../../../assets/plus.svg"
@@ -16,71 +16,79 @@ const StyledContainer = styled(Container)({
 })
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 const ItemFrequently = () => {
+    const [value, setValue] = React.useState(5)
     return (
         <StyledContainer>
             <Grid container spacing={4}>
                 <Grid item xs={6}>
                     <Box sx={{ display: "flex", alignItems: "center" }}>
                         <Box>
-                            <img src={Image} alt="abc" width="95px" height="95px" />
+                            <img src={Image} alt="abc" width="140px" height="140px" />
+                        </Box>
+
+
+                        <Box>
+                            <Plus />
+                        </Box>
+                        {/* <Box>
+                            <img src={Image} alt="abc" width="140px" height="140px" />
                         </Box>
                         <Box>
                             <Plus />
                         </Box>
                         <Box>
-                            <img src={Image} alt="abc" width="95px" height="95px" />
+                            <img src={Image} alt="abc" width="140px" height="140px" />
+                        </Box> */}
+                    </Box>
+                    <Box>
+                        <Box sx={{ display: "flex", alignItems: 'baseline' }}>
+                            <Box>
+                                <Checkbox {...label} defaultChecked />
+                            </Box>
+                            <Box>
+                                <Typography>
+                                    $34.99
+                                </Typography>
+                            </Box>
                         </Box>
-                        <Box>
-                            <Plus />
+                        <Box sx={{ display: "flex" }}>
+                            <Box sx={{ visibility: "hidden" }}>cdcsd</Box>
+                            <Box>
+                                <Typography>
+                                    (Current Item):
+                                </Typography>
+                            </Box>
                         </Box>
-                        <Box>
-                            <img src={Image} alt="abc" width="95px" height="95px" />
+                        <Box sx={{ display: "flex" }}>
+                            <Box sx={{ visibility: "hidden" }}>cdcsd</Box>
+                            <Box>
+                                <Typography>
+                                    Dunkin' Donuts®
+                                </Typography>
+                            </Box>
                         </Box>
-                        <Box>
-                            <Plus />
-                        </Box>
-                        <Box>
-                            <img src={Image} alt="abc" width="95px" height="95px" />
+                        <Box sx={{ display: "flex" }}>
+                            <Box sx={{ visibility: "hidden" }}>cdcsd</Box>
+                            <Box>
+                                <Typography sx={{
+                                    textOverflow: "ellipsis",
+                                    whiteSpace: "nowrap",
+                                    width: "106px",
+                                    overflow: "hidden",
+                                }}>
+                                    Decaf Coffee Keurig® K-Cup® Pods 44-Count
+                                </Typography>
+                            </Box>
                         </Box>
                     </Box>
-                    <Box sx={{ display: "flex", alignItems: 'baseline' }}>
+                    <Box sx={{ display: "flex" }}>
+                        <Box sx={{ visibility: "hidden" }}>cdcsd</Box>
                         <Box>
-                            <Checkbox {...label} defaultChecked />
-                        </Box>
-                        <Box>
-                            <Typography variant='body1' gutterBottom>
-                                Dunkin' Donuts® Original Blend Coffee Keurig® K-Cup® Pods 22-Count
-                            </Typography>
-                        </Box>
-                    </Box>
-                    <Box sx={{ display: "flex", alignItems: 'baseline' }}>
-                        <Box>
-                            <Checkbox {...label} defaultChecked />
-                        </Box>
-                        <Box>
-                            <Typography variant='body1' gutterBottom>
-                                Dunkin' Donuts® Original Blend Coffee Keurig® K-Cup® Pods 22-Count
-                            </Typography>
-                        </Box>
-                    </Box>
-                    <Box sx={{ display: "flex", alignItems: 'baseline' }}>
-                        <Box>
-                            <Checkbox {...label} defaultChecked />
-                        </Box>
-                        <Box>
-                            <Typography variant='body1' gutterBottom>
-                                Dunkin' Donuts® Original Blend Coffee Keurig® K-Cup® Pods 22-Count
-                            </Typography>
-                        </Box>
-                    </Box>
-                    <Box sx={{ display: "flex", alignItems: 'baseline' }}>
-                        <Box>
-                            <Checkbox {...label} defaultChecked />
-                        </Box>
-                        <Box>
-                            <Typography variant='body1' gutterBottom>
-                                Dunkin' Donuts® Original Blend Coffee Keurig® K-Cup® Pods 22-Count
-                            </Typography>
+                            <Rating name="simple-controlled"
+                                value={value}
+                                onChange={(event, newValue) => {
+                                    setValue(newValue);
+                                }} />
                         </Box>
                     </Box>
                 </Grid>
@@ -103,7 +111,7 @@ const ItemFrequently = () => {
                     <Box sx={{ display: "flex", justifyContent: "center" }}>
                         <Button sx={{ width: '340px', height: "50px", background: 'blue', color: 'white' }}>Add To Cart</Button>
                     </Box>
-                    <Box sx={{ display: "flex",justifyContent: "center"}}>
+                    <Box sx={{ display: "flex", justifyContent: "center" }}>
                         <AddShoppingCart />
                         <Typography>
                             Add to Shopping List

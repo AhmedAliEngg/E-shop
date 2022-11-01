@@ -15,7 +15,7 @@ const ItemFrequentlyHeading = () => {
     return (
         <Box>
             <StyledContainer>
-                <Typography variant='h4' align='center' mt={2} mb={2} sx={{ color: '#002855', fontWeight: 'bold' }}> sizzling kitchen deals </Typography>
+                <Typography variant='h4' align='center' mt={2} mb={2} sx={{ color: '#002855', fontWeight: 'bold' }}> frequently bought together </Typography>
             </StyledContainer>
         </Box>
     )

@@ -148,7 +148,7 @@ const RatingReview = () => {
                         </Box>
                     </Grid>
                     <Grid item xs={4} sx={{ marginTop: '4.5pc' }}>
-                        <Box sx={{display:'flex',justifyContent:'space-evenly'}}>
+                        <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
                             <Box display='flex' justifyContent='space-between' alignItems='center'>
                                 <CircularProgress variant='determinate' value={85} style={{ width: "40px", height: '52px' }} />
                                 <Typography position='absolute'>{85}%</Typography>
@@ -158,7 +158,7 @@ const RatingReview = () => {
                                 <Typography position='absolute'>{85}%</Typography>
                             </Box>
                         </Box>
-                        <Box  sx={{display:'flex',justifyContent:'space-evenly'}}>
+                        <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
                             <Box>
                                 <Typography>
                                     assasa
@@ -170,14 +170,14 @@ const RatingReview = () => {
                                 </Typography>
                             </Box>
                         </Box>
-                        <Box sx={{display:"flex", justifyContent:'center'}}>
-                        <Button variant="outlined" sx={{width:"80%",height:"45px"}}>Primary</Button>
+                        <Box sx={{ display: "flex", justifyContent: 'center' }}>
+                            <Button variant="outlined" sx={{ width: "80%", height: "45px" }}>Primary</Button>
                         </Box>
 
                     </Grid>
                 </Grid>
             </StyledContainer>
-            
+
         </Box>
     )
 }

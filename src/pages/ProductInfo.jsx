@@ -29,9 +29,9 @@ const ProductInfo = () => {
             <VerticalCarousel/>
             <NavBarDetail/>
             <AboutProduct/>
+            <Rated4Stars/>
             <ItemFrequentlyHeading/>
             <ItemFrequently/>
-            <Rated4Stars/>
             <LoveProduct/>
             <LikeProducts/>
             <RecentlyView/>

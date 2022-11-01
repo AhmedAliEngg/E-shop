@@ -1,5 +1,5 @@
-import { AddShoppingCart, CardGiftcard, KeyboardArrowDown } from '@mui/icons-material';
-import { Box, Container, styled, Grid, Typography, Divider, Checkbox, Radio, InputBase, Button } from '@mui/material'
+import { AddShoppingCart, CardGiftcard, CreditCard, Info, KeyboardArrowDownSharp, LocalOfferOutlined, ShoppingBagOutlined, } from '@mui/icons-material';
+import { Box, Container, styled, Grid, Typography, Divider, Checkbox, Button } from '@mui/material'
 import React, { useState } from 'react'
 import Image from '../../../assets/CarouselImage.webp'
 import { ReactComponent as Star } from '../../../assets/star.svg'
@@ -83,7 +83,7 @@ const StyledTypographyThree = styled(Typography)({
     textTransform: "none",
     letterSpacing: "0.0005em"
 })
-const StyledTypographyFour = styled (Typography)({
+const StyledTypographyFour = styled(Typography)({
     margin: "10px",
     textDecoration: "underline",
 })
@@ -96,13 +96,21 @@ const Search = styled(Box)(({ theme }) => ({
 const StyledBoxThree = styled(Box)({
     display: "flex",
     justifyContent: "space-around",
+    marginTop: "5px",
+    paddingTop: "5px"
 })
 const StyledButton = styled(Button)({
-    width: '280.88px',
-    height: '50px'
+    width: '430.88px',
+    height: '45px',
+    marginTop: "4px"
 })
 const StyledTypography = styled(Typography)({
     margin: "10px"
+})
+const StyledBox = styled(Box)({
+    display: "flex", 
+    justifyContent: "space-evenly",
+     marginTop: "10px"
 })
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 const VerticalCarousel = () => {
@@ -154,34 +162,34 @@ const VerticalCarousel = () => {
             <StyledContainerFour>
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Box component="span">
-                    <Star width="90" height="20"/>
+                        <Star width="90" height="20" />
                     </Box>
                     <Box component="span">
-                    <StyledTypographyFour variant='caption' sx={{textTransform:"none"}}>
-                        1036 Reviews
-                    </StyledTypographyFour>
+                        <StyledTypographyFour variant='caption' sx={{ textTransform: "none" }}>
+                            1036 Reviews
+                        </StyledTypographyFour>
                     </Box>
-                    <Divider orientation="vertical" flexItem  sx={{ borderColor: "rgba(0, 0, 0, 0.30)" }}/>
+                    <Divider orientation="vertical" flexItem sx={{ borderColor: "rgba(0, 0, 0, 0.30)" }} />
                     <Box component="span">
-                    <StyledTypographyFour  variant='caption' sx={{textTransform:"none"}}>
-                        Write Review
-                    </StyledTypographyFour>
+                        <StyledTypographyFour variant='caption' sx={{ textTransform: "none" }}>
+                            Write Review
+                        </StyledTypographyFour>
                     </Box>
-                    <Divider orientation="vertical" flexItem  sx={{ borderColor: "rgba(0, 0, 0, 0.30)" }}/>
+                    <Divider orientation="vertical" flexItem sx={{ borderColor: "rgba(0, 0, 0, 0.30)" }} />
                     <Box component="span">
-                    <StyledTypographyFour  variant='caption' sx={{textTransform:"none"}}>
-                        Q&A
-                    </StyledTypographyFour>
+                        <StyledTypographyFour variant='caption' sx={{ textTransform: "none" }}>
+                            Q&A
+                        </StyledTypographyFour>
                     </Box>
                 </Box>
             </StyledContainerFour>
 
             <StyledContainer>
-                <Grid container spacing={2} >
+                <Grid container spacing={12} >
                     <Grid item xs={6}>
                         <Swiper
                             loop={true}
-                            spaceBetween={1}
+                            // spaceBetween={0.5}
                             navigation={true}
                             zoom={true}
                             pagination={{
@@ -240,131 +248,172 @@ const VerticalCarousel = () => {
                     </Grid>
 
                     <Grid item xs={6}>
-                        <Box>
-                            <Typography variant='h6'>
-                                Dunkin' Donuts
-                            </Typography>
-                        </Box>
-
-                        <Box>
-                            <Typography variant='subtitle1' gutterBottom>
-                                $19.99
-                            </Typography>
-                        </Box>
-                        <Box sx={{ display: 'flex' }}>
-                            <Typography variant='caption' gutterBottom>
-                                Enjoy these
-                            </Typography>
-                            <Box component='span'>
-                                <Typography variant='subtitle1' gutterBottom sx={{ lineHeight: 1.08 }}>
-                                    $19.99
+                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                            <Box>
+                                <Typography variant='h6' sx={{ color: "#e00000", fontSize: "1.325rem", fontFamily: "Termina Headline,Verdana,Geneva,sans-serif" }}>
+                                    $40.00
                                 </Typography>
                             </Box>
-                            <Typography variant='caption' gutterBottom>
-                                payment options
-                            </Typography>
-                            <KeyboardArrowDown />
+                            <Box>
+                                <Typography variant="caption" sx={{ textDecoration: "line-through", fontSize: "0.85rem", margin: "5px" }}>
+                                    $80.00
+                                </Typography>
+                            </Box>
+                            <Box>
+                                <Typography variant='caption' sx={{ fontSize: "0.85rem", color: "#e00000" }}>
+                                    Save $40.00 (50%)
+                                </Typography>
+                            </Box>
+                        </Box>
+
+                        <Box sx={{ display: "flex", justifyContent: "end" }}>
+                            <Box>
+                                <LocalOfferOutlined />
+                            </Box>
+
+                            <Box component="span" >
+                                <Typography variant='caption' sx={{ textDecoration: "underline", fontSize: "0.85rem" }} >
+                                    Price Match Promise
+                                </Typography>
+                            </Box>
                         </Box>
                         <Box>
                             <Divider />
                         </Box>
                         <Box>
-                            <Typography variant='subtitle1'>
-                                $23 Keurig K-Cup Pods for 36-48ct value packs
+                            <Typography variant='subtitle1' sx={{ fontWeight: "bolder", marginLeft: "10px" }}>
+                                Sale!
                             </Typography>
-                            {/* <Disabled/> */}
                         </Box>
-                        <Box>
-                            <Typography variant='subtitle1'>
-                                Free Shipping on Orders Over $39
-                            </Typography>
-                            {/* <Disabled/> */}
+                        <Box sx={{ display: "flex" }}>
+                            <Box>
+                                <Typography variant='subtitle1' sx={{ marginLeft: "10px" }}>
+                                    Excluded from coupons
+                                </Typography>
+                            </Box>
+                            <Box>
+                                <Info />
+                            </Box>
                         </Box>
-                        <Box sx={{ backgroundColor: '#f7f7f8' }}>
-                            <Box sx={{ display: "flex", alignItems: 'center' }}>
+
+                        <Box sx={{ display: "flex", alignItems: 'center' }}>
+                            <Box>
                                 <Checkbox {...label} />
-                                <Typography variant='subtitle1'>
+                            </Box>
+                            <Box>
+                                <Typography variant='subtitle1' sx={{ fontWeight: "bolder" }}>
                                     Subscribe and earn 5% in My Funds
                                 </Typography>
                             </Box>
+                            <Box>
+                                <Info />
+                            </Box>
+                        </Box>
 
 
-                            <Box sx={{ display: "flex", alignItems: 'center' }}>
-                                <Radio />
-                                <Typography variant='subtitle1'>
-                                    FREE Store Pickup  Nearby  Watchung
-                                </Typography>
-                            </Box>
-                            <Box sx={{ display: 'flex', marginLeft: "2.499rem" }}>
-                                <Typography variant='caption'>
-                                    Ready for Pickup when store opens at 10 AM
-                                </Typography>
-                            </Box>
-                            <Box sx={{ display: 'flex', marginLeft: "2.499rem" }}>
-                                <Typography variant='caption'>
-                                    Ready for Pickup when store opens at 10 AM
-                                </Typography>
-                            </Box>
-
-
-                            <Box sx={{ display: "flex", alignItems: 'center' }}>
-                                <Radio />
-                                <Typography variant='subtitle1'>
-                                    FREE Store Pickup  Nearby  Watchung
-                                </Typography>
-                            </Box>
-                            <Box sx={{ display: 'flex', marginLeft: "2.499rem" }}>
-                                <Typography variant='caption'>
-                                    Ready for Pickup when store opens at 10 AM
-                                </Typography>
-                            </Box>
-                            <Box sx={{ display: 'flex', marginLeft: "2.499rem" }}>
-                                <Typography variant='caption'>
-                                    Ready for Pickup when store opens at 10 AM
-                                </Typography>
-                            </Box>
-
-
-                            <Box sx={{ display: "flex", alignItems: 'center' }}>
-                                <Radio />
-                                <Typography variant='subtitle1'>
-                                    FREE Store Pickup  Nearby  Watchung
-                                </Typography>
-                            </Box>
-                            <Box sx={{ display: 'flex', marginLeft: "2.499rem" }}>
-                                <Typography variant='caption'>
-                                    Ready for Pickup when store opens at 10 AM
-                                </Typography>
-                            </Box>
-                            <Box sx={{ display: 'flex', marginLeft: "2.499rem" }}>
-                                <Typography variant='caption'>
-                                    Ready for Pickup when store opens at 10 AM
-                                </Typography>
-                            </Box>
-                            <StyledBoxThree component="span">
-                                <Search>
-                                    <Button>Qty</Button>
-                                </Search>
-                                <Box>
-                                    <StyledButton variant="contained">Contained</StyledButton>
+                        <Box sx={{ display: 'flex', justifyContent: 'space-around' }}>
+                            <Box sx={{ border: '1px solid #ddd', width: '160px', height: '150px' }}>
+                                <Box sx={{ display: "flex", justifyContent: "space-evenly", margin: "5px", padding: "5px" }}>
+                                    <Box>
+                                        <ShoppingBagOutlined />
+                                    </Box>
+                                    <Box>
+                                        <Typography variant='caption' sx={{ fontSize: "0.85rem", fontWeight: "bolder" }}>
+                                            FREE Store <Box>Pickup</Box>
+                                        </Typography>
+                                    </Box>
                                 </Box>
-                            </StyledBoxThree>
-                            <Divider sx={{ marginTop: '15px' }} />
-                            <Box sx={{ display: "flex", justifyContent: "space-between", marginTop: '15px' }}>
-                                <Box sx={{ display: "flex" }}>
-                                    <CardGiftcard />
-                                    <Typography>
-                                        Add to Registry
+                                <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
+                                    <Typography variant='caption' sx={{ fontSize: "0.7rem" }}>
+                                        <Box>Ready for Pickup</Box><Box>when store opens</Box>  <Box>at 10 AM</Box>
                                     </Typography>
                                 </Box>
-                                <Box sx={{ display: "flex" }}>
-                                    <AddShoppingCart />
-                                    <Typography>
-                                        Add to Shopping List
+                            </Box>
+                            <Box sx={{ border: '1px solid #ddd', width: '160px', height: '150px' }}>
+                                <Box sx={{ display: "flex", justifyContent: "space-evenly", margin: "5px", padding: "5px" }}>
+                                    <Box>
+                                        <ShoppingBagOutlined />
+                                    </Box>
+                                    <Box>
+                                        <Typography variant='caption' sx={{ fontSize: "0.85rem", fontWeight: "bolder" }}>
+                                            FREE Store <Box>Pickup</Box>
+                                        </Typography>
+                                    </Box>
+                                </Box>
+                                <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
+                                    <Typography variant='caption' sx={{ fontSize: "0.7rem" }}>
+                                        <Box>Ready for Pickup</Box><Box>when store opens</Box>  <Box>at 10 AM</Box>
+                                    </Typography>
+                                </Box>
+                            </Box>
+                            <Box sx={{ border: '1px solid #ddd', width: '160px', height: '150px' }}>
+                                <Box sx={{ display: "flex", justifyContent: "space-evenly", margin: "5px", padding: "5px" }}>
+                                    <Box>
+                                        <ShoppingBagOutlined />
+                                    </Box>
+                                    <Box>
+                                        <Typography variant='caption' sx={{ fontSize: "0.85rem", fontWeight: "bolder" }}>
+                                            FREE Store <Box>Pickup</Box>
+                                        </Typography>
+                                    </Box>
+                                </Box>
+                                <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
+                                    <Typography variant='caption' sx={{ fontSize: "0.7rem" }}>
+                                        <Box>Ready for Pickup</Box><Box>when store opens</Box>  <Box>at 10 AM</Box>
                                     </Typography>
                                 </Box>
                             </Box>
                         </Box>
+                        <Box sx={{ display: "flex" }}>
+                            <Box sx={{ marginTop: "5px", paddingTop: "5px" }}>
+                                <Typography variant='caption' sx={{ fontSize: "0.9rem", fontWeight: "bolder", marginLeft: "10px" }}>
+                                    Shipping  to 07045
+                                </Typography>
+                            </Box>
+                            <Box sx={{ marginTop: "5px", paddingTop: "5px" }}>
+                                <Typography variant='caption' sx={{ fontSize: "0.7rem", textDecoration: "underline" }}>
+                                    Change Zip Code
+                                </Typography>
+                            </Box>
+                        </Box>
+                        <Box sx={{ marginTop: "5px", paddingTop: "5px" }}>
+                            <Divider />
+                        </Box>
+                        <StyledBoxThree component="span">
+                            <Search>
+                                <Button size="medium" variant="outlined" sx={{ height: '45px' }}>Qty<KeyboardArrowDownSharp /></Button>
+                            </Search>
+                            <Box>
+                                <StyledButton variant="contained">Contained</StyledButton>
+                            </Box>
+                        </StyledBoxThree>
+                        <StyledBox>
+                            <Box>
+                                <Button variant="outlined" sx={{ width: "258px", height: "50px" }}>Add to Registry</Button>
+                            </Box>
+                            <Box>
+                                <Button variant="outlined" sx={{ width: "270px", height: "50px" }}>Add to Registry</Button>
+                            </Box>
+                        </StyledBox>
+                        <Divider sx={{ marginTop: '15px' }} />
+                        <Box sx={{display:"flex",marginTop:"10px"}}>
+                            <Box>
+                                <CreditCard />
+                            </Box>
+                            <Box>
+                                <Typography variant="caption" sx={{fontWeight:"bolder",fontSize: "0.9rem"}}>
+                                Get 20% off every time you shop & earn 10% back in points<Box variant="span">
+                                   <Typography variant='caption'> when you are approved for Welcome Rewards credit card. No annual fee </Typography> 
+                                </Box>
+                                </Typography>
+                            </Box>
+                        </Box>
+                        <Box>
+                            <Typography variant='caption' sx={{textDecoration:"underline",marginLeft:"20px"}}>
+                                Apply Now
+                            </Typography>
+                        </Box>
+
                     </Grid>
                 </Grid>
             </StyledContainer>
